@@ -1,0 +1,41 @@
+{
+  "name": "todo-task-novastrid",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.6.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@eslint/js": "^9.21.0",
+    "@mui/icons-material": "^6.4.7",
+    "@mui/material": "^6.4.7",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@types/shortid": "^2.2.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "react-redux": "^8.0.4",
+    "react-router-dom": "^6.4.2",
+    "react-scripts": "^5.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.4.0",
+    "shortid": "^2.2.17",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.24.1",
+    "vite": "^6.2.0"
+  }
+}

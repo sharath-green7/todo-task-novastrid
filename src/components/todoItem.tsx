@@ -28,7 +28,7 @@ const ToDoItem = (props: TodoItemInterface) => {
             </Box>
 
             <Stack direction="row" alignItems="center" spacing={1}>
-              <Checkbox />
+              <Checkbox onClick={() => props.handleTodoComplete(props.todo.id)}/>
                 <IconButton color="error" onClick={() => props.handleTodoRemove(props.todo.id)}>
                     <DeleteIcon />
                 </IconButton>

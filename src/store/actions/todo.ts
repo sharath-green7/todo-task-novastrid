@@ -14,7 +14,6 @@ import { getTodoList, createTodo, completeTodo, deleteTodo, setLoading } from ".
           (error) => console.log("An error occurred.", error)
         )
         .then((json) => {
-            console.log("Jsonaction", json);
             dispatch(getTodoList(json));
             dispatch(setLoading(false));
         });

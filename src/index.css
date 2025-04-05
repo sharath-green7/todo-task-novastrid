@@ -1,3 +1,11 @@
 .textCenter {
   text-align: center;
 }
+
+.selectWidth{
+  width: 95%;
+}
+
+.mt-10{
+  margin: 10px!important;
+}

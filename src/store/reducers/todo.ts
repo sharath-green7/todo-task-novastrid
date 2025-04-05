@@ -43,10 +43,21 @@ const todoStateSlice = createSlice({
       );
       return { ...state, data: {...state.data, todos: filterArr, total: state.data.total-1}, errorData: {}, loading: false };
     },
+
+    filterTodo(state, { payload }) {
+      let filterArr: any = [];
+      if(payload !== 'all') {
+        payload === 'completed' ? true : false;
+        filterArr = state.data.todos.filter(
+          (item: any) => item.completed === true
+        );
+      }
+      return { ...state, data: {...state.data, todos: filterArr, total: state.data.todos.length}, errorData: {}, loading: false };
+    },
   },
 });
 
-export const { setLoading, getTodoList, createTodo, completeTodo, deleteTodo } =
+export const { setLoading, getTodoList, createTodo, completeTodo, deleteTodo, filterTodo } =
   todoStateSlice.actions;
 export const todoInfo = (state: any) => state.todoState;
 export const todoInfoDetail = createSelector(todoInfo, (state) => state.data);

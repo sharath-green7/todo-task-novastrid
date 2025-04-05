@@ -1,22 +1,21 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 import ToDoList from "./components/todoList";
 import { TodoInterface } from "./inteface";
 import ToDoForm from "./components/todoForm";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllTodo, completeTodoAction, createTodoAction, deleteTodoAction } from "./store/actions/todo";
+import { getAllTodo, completeTodoAction, createTodoAction, deleteTodoAction, filterTodoAction } from "./store/actions/todo";
 
 interface AppProps {
   title: string;
 }
 
 const App: FC<AppProps> = ({ title }) => {
- const todoList = useSelector((state: any) => state.todoState);
+ let todoList = useSelector((state: any) => state.todoState);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch<any>(getAllTodo());
   }, [dispatch]);
-  console.log("todoListUI", todoList);
 
   const addTodo = (newTodo: TodoInterface) => {
     dispatch<any>(createTodoAction(newTodo));
@@ -29,10 +28,15 @@ const App: FC<AppProps> = ({ title }) => {
   function handleTodoComplete(id: string) {
     dispatch<any>(completeTodoAction(id));
   }
+
+  function handleStatusChange(status: string) {
+    dispatch<any>(filterTodoAction(status));
+  }
+
   return (
     <div>
       <h1 className="textCenter">{title}</h1>
-      <ToDoForm handleTodoCreate={addTodo} />
+      <ToDoForm handleStatusChange={handleStatusChange} handleTodoCreate={addTodo} />
       <ToDoList
         todos={todoList.data.todos}
         handleTodoRemove={handleTodoRemove}

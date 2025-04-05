@@ -8,7 +8,7 @@ import './index.css';
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <Suspense>
     <Provider store={store}>
-      <App title="My ToDos List"/>
+      <App title="My ToDos"/>
     </Provider>
   </Suspense>
 );

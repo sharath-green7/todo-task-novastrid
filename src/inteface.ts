@@ -7,6 +7,7 @@ export interface TodoInterface {
 export interface TodoFormInterface {
     todos?: TodoInterface[];
     handleTodoCreate: (todo: TodoInterface) => void;
+    handleStatusChange: (status: string) => void;
 }
 
 export interface TodoListInterface {

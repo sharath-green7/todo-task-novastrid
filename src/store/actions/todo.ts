@@ -1,5 +1,5 @@
   import { TodoInterface } from "../../inteface";
-import { getTodoList, createTodo, completeTodo, deleteTodo, setLoading } from "../reducers/todo";
+import { getTodoList, createTodo, completeTodo, deleteTodo, setLoading, filterTodo } from "../reducers/todo";
   
   export function getAllTodo() {
     return function (dispatch: any) {
@@ -43,3 +43,12 @@ import { getTodoList, createTodo, completeTodo, deleteTodo, setLoading } from ".
       dispatch(setLoading(false));
     };
   }
+
+  export function filterTodoAction(todoStatus: string) {
+    return function (dispatch: any) {
+      dispatch(setLoading(true));
+      dispatch(filterTodo(todoStatus));
+      dispatch(setLoading(false));
+    };
+  }
+
